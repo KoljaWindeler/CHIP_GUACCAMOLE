@@ -8,5 +8,5 @@ WGET_STRING="`wget -q -O- "http://www.iheart.com/live/945-the-buzz-2281/?_countr
 URL=${WGET_STRING//\\/}
 
 # Start the rtmp dump application and record stream to mplayer
-screen -S "buzz_radio_screen" -d -m
-screen -r "buzz_radio_screen" -X stuff "nice --10 rtmpdump -r $URL -v | mplayer -ao alsa:device=hw=1.0 -&\n"
+screen -S "radio_screen" -d -m
+screen -r "radio_screen" -X stuff "nice --10 rtmpdump -r $URL -v | mplayer -ao alsa:device=hw=1.0 -&\n"
